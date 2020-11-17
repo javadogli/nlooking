@@ -54,7 +54,9 @@ window.onkeyup = e => {
             }, 1700);
         }, 200);
         initialized = true;
-    }
+	} else if (initialized && (e.key === "Enter" || e.key === ' ')) {
+		handleClick();
+	}
 };
 
 function handleClick() {
@@ -97,8 +99,3 @@ let current = 0;
 let clicking = false;
 
 window.onclick = handleClick;
-window.onkeyup = e => {
-    if (initialized && e.key === "Enter") {
-        handleClick();
-    }
-};
