@@ -60,7 +60,8 @@ function initialize() {
             return;
         }
         blur--;
-        document.querySelector("body").style.backdropFilter = "blur(" + blur + "px)";
+        // F Safari
+        document.querySelector("body").setAttribute("style", "backdrop-filter: blur(" + blur + "px); -webkit-backdrop-filter: blur(" + blur + "px)");
     }, 10);
     initialized = true;
 }
@@ -117,3 +118,4 @@ let current = 0;
 let clicking = false;
 
 window.onclick = handleClick;
+window.ontouchstart = handleClick;
