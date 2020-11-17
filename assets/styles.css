@@ -9,6 +9,13 @@
     font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
 }
 
+body {
+    background-image: url("background.jpg");
+    background-position: bottom;
+    background-size: cover;
+    backdrop-filter: blur(20px);
+}
+
 .font-header {
     font-family: Julius Sans One, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
 }

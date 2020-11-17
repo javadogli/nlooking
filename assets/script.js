@@ -25,41 +25,51 @@ const audio = document.getElementById("audio");
 
 let initialized = false;
 
-window.onkeyup = e => {
-    if (!initialized && e.key === " ") {
-        display1.style.animationName = "fade-out";
-        display1.style.animationDuration = "200ms";
-        display1.style.animationTimingFunction = "ease-in";
-        display1.style.animationPlayState = "running";
+function initialize() {
+    display1.style.animationName = "fade-out";
+    display1.style.animationDuration = "200ms";
+    display1.style.animationTimingFunction = "ease-in";
+    display1.style.animationPlayState = "running";
+
+    setTimeout(() => {
+        // This will be called after the initial fade out finishes.
+        display1.remove();
+        display2.style.display = "flex";
+        display2.style.animationName = "fade-in";
+        display2.style.animationDuration = "200ms";
+        display2.style.animationTimingFunction = "ease-out";
+        display2.style.animationPlayState = "running";
+        display2.style.opacity = "1";
+        text.style.animationPlayState = "running";
+        audio.play();
 
         setTimeout(() => {
-            // This will be called after the initial fade out finishes.
-            display1.remove();
-            display2.style.display = "flex";
-            display2.style.animationName = "fade-in";
-            display2.style.animationDuration = "200ms";
-            display2.style.animationTimingFunction = "ease-out";
-            display2.style.animationPlayState = "running";
-            display2.style.opacity = "1";
-            text.style.animationPlayState = "running";
-            audio.play();
+            // This will be called after the title animation finishes.
+            otherText.style.opacity = "1";
+            otherText.style.animationName = "fade-in";
+            otherText.style.animationDuration = "500ms";
+            otherText.style.animationTimingFunction = "ease-out";
+            otherText.style.animationPlayState = "running";
+        }, 1700);
+    }, 200);
 
-            setTimeout(() => {
-                // This will be called after the title animation finishes.
-                otherText.style.opacity = "1";
-                otherText.style.animationName = "fade-in";
-                otherText.style.animationDuration = "500ms";
-                otherText.style.animationTimingFunction = "ease-out";
-                otherText.style.animationPlayState = "running";
-            }, 1700);
-        }, 200);
-        initialized = true;
-	} else if (initialized && (e.key === "Enter" || e.key === ' ')) {
-		handleClick();
-	}
-};
+    let blur = 20;
+    const interval = setInterval(() => {
+        if (blur === 0) {
+            clearInterval(interval);
+            return;
+        }
+        blur--;
+        document.querySelector("body").style.backdropFilter = "blur(" + blur + "px)";
+    }, 10);
+    initialized = true;
+}
 
 function handleClick() {
+    if (!initialized) {
+        initialize();
+        return;
+    }
     if (clicking) {
         return;
     }
@@ -81,6 +91,14 @@ function handleClick() {
         clicking = false;
     }, 100);
 }
+
+window.onkeyup = e => {
+    if (!initialized && e.key === " ") {
+        initialize();
+    } else if (initialized && (e.key === "Enter" || e.key === " ")) {
+        handleClick();
+    }
+};
 
 const messages = [
     "Stay-at-home Developer",
