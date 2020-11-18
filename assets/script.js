@@ -118,4 +118,4 @@ let current = 0;
 let clicking = false;
 
 window.onclick = handleClick;
-window.ontouchstart = handleClick;
+window.ontouchend = handleClick;
