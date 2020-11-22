@@ -107,7 +107,6 @@ const messages = [
     "Discord server setup",
     "Doing:",
     "Working on <a href=\"https://github.com/Spock-App\" title=\"Spock\">Spock</a>",
-    "Learning <a href=\"https://www.coursera.org/learn/nand2tetris2\">nand2tetris Part 2</a>",
     "Preferred contact method is Discord."
 ];
 
