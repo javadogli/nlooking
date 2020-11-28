@@ -34,12 +34,12 @@ function handleScroll() {
         expLink.classList.add("blue-gradient");
         return;
     }
-    if (isVisible(services)) {
-        servicesLink.classList.add("blue-gradient");
-        return;
-    }
     if (isVisible(contact)) {
         contactLink.classList.add("blue-gradient");
+        return;
+    }
+    if (isVisible(services)) {
+        servicesLink.classList.add("blue-gradient");
     }
 }
 
