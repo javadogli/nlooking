@@ -3,7 +3,7 @@
 const about = document.getElementById("about");
 const exp = document.getElementById("experiences");
 const services = document.getElementById("services");
-const contact = document.getElementById("contact");
+const footer = document.getElementById("footer");
 const aboutLink = document.getElementById("about-link");
 const expLink = document.getElementById("exp-link");
 const servicesLink = document.getElementById("services-link");
@@ -34,7 +34,8 @@ function handleScroll() {
         expLink.classList.add("blue-gradient");
         return;
     }
-    if (isVisible(contact)) {
+    if (isVisible(footer)) { // If the footer is visible then the contacts must be visible.
+        // Because checking contact's visibility before service's can cause inaccurate results.
         contactLink.classList.add("blue-gradient");
         return;
     }
