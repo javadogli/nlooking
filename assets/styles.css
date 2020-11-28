@@ -1,114 +1,86 @@
-:root {
-    --animation-delay: 800ms;
-    --animation-duration: 1.5s;
-    --animation-iterations: 1;
-}
-
-* {
-    color: white;
-    font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
-}
-
-body {
-    background-image: url("background.jpg");
-    background-position: bottom;
-    background-size: cover;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); /* Because F Safari */
-}
-
-.font-header {
-    font-family: Julius Sans One, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
-}
-
-.vertical-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
-
-.reveal-text,
-.reveal-text::after {
-    animation-delay: var(--animation-delay, 2s);
-    animation-iteration-count: var(--animation-iterations, 1);
-    animation-duration: var(--animation-duration, 800ms);
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
-    animation-play-state: paused;
-}
-
-.reveal-text {
-    position: relative;
-    animation-name: clip-text;
-    white-space: nowrap;
-    cursor: default;
-}
-
-.reveal-text::after {
-    content: "";
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: transparent;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    pointer-events: none;
-    animation-name: text-revealer;
-}
-
-#text {
-    font-size: 4rem;
-}
-
-@keyframes clip-text {
-    from {
-        clip-path: inset(0 100% 0 0);
-    }
-    to {
-        clip-path: inset(0 0 0 0);
-    }
-}
+/* Copyright (C) 2020 Dreta. All rights reserved. */
 
 @keyframes fade-in {
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
     }
 }
 
 @keyframes fade-out {
-    from {
+    0% {
         opacity: 1;
     }
 
-    to {
+    100% {
         opacity: 0;
     }
 }
 
-@keyframes text-revealer {
-    0%, 50% {
-        transform-origin: 0 50%;
-    }
+* {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+}
 
-    60%, 100% {
-        transform-origin: 100% 50%;
-    }
+.font-header {
+    font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-    60% {
-        transform: scaleX(1);
-    }
+.transition {
+    transition: 0.25s !important;
+}
 
-    100% {
-        transform: scaleX(0);
-    }
+.btn-color {
+    background-color: #468fea;
+}
+
+.orange-gradient {
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #d6cc43 0%, #fc575e 74%);
+}
+
+.hover\:orange-gradient:hover {
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #d6cc43 0%, #fc575e 74%);
+}
+
+.hover\:blue-gradient:hover {
+    background-color: #468fea !important;
+    background-image: linear-gradient(315deg, #3846c8 0%, #468fea 74%) !important;
+}
+
+.blue-gradient {
+    background-color: #468fea !important;
+    background-image: linear-gradient(315deg, #3846c8 0%, #468fea 74%) !important;
+}
+
+.hover\:button:hover {
+    background-color: #3846c8;
+}
+
+.cr-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: 0.2s;
+}
+
+.cr-card:not(:first-child) {
+    margin-left: -2rem;
+}
+
+.cr-card:not(:last-child):hover,
+.cr-card:not(:last-child):focus-within {
+    transform: translateY(-1rem);
+}
+
+.cr-card:not(:last-child):hover ~ .cr-card,
+.cr-card:not(:last-child):focus-within ~ .cr-card {
+    transform: translateX(2rem);
 }

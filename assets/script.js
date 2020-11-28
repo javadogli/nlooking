@@ -1,117 +1,153 @@
-// This is Dreta's website. Hmm...
-// Copyright (C) 2020 Dreta
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+// Copyright (C) 2020 Dreta. All rights reserved.
 
-// Please don't look at this. This is ugly AF.
+const about = document.getElementById("about");
+const exp = document.getElementById("experiences");
+const services = document.getElementById("services");
+const contact = document.getElementById("contact");
+const aboutLink = document.getElementById("about-link");
+const expLink = document.getElementById("exp-link");
+const servicesLink = document.getElementById("services-link");
+const contactLink = document.getElementById("contact-link");
 
-const display2 = document.getElementById("display-2");
-const text = document.getElementById("text");
-const otherText = document.getElementById("other-text");
-const descText = document.getElementById("description-text");
-const playbackToggle = document.getElementById("playback-toggle");
-const toggleOn = document.getElementById("toggle-on");
-const toggleOff = document.getElementById("toggle-off");
-const audio = document.getElementById("audio");
+// Scrollspy
 
-function initialize() {
-    display2.style.display = "flex";
-    display2.style.animationName = "fade-in";
-    display2.style.animationDuration = "200ms";
-    display2.style.animationTimingFunction = "ease-out";
-    display2.style.animationPlayState = "running";
-    display2.style.opacity = "1";
-    text.style.animationPlayState = "running";
-
-    setTimeout(() => {
-        // This will be called after the title animation finishes.
-        otherText.style.opacity = "1";
-        otherText.style.animationName = "fade-in";
-        otherText.style.animationDuration = "500ms";
-        otherText.style.animationTimingFunction = "ease-out";
-        otherText.style.animationPlayState = "running";
-    }, 1700);
-
-    let blur = 20;
-    const interval = setInterval(() => {
-        if (blur === 0) {
-            clearInterval(interval);
-            return;
-        }
-        blur--;
-        // F Safari
-        document.querySelector("body").setAttribute("style", "backdrop-filter: blur(" + blur + "px); -webkit-backdrop-filter: blur(" + blur + "px)");
-    }, 10);
-}
-
-function handleClick() {
-    if (clicking) {
+function isVisible(e) {
+    if (e == null) {
         return;
     }
-    clicking = true;
-    current++;
-    if (current === messages.length) {
-        current = 0;
+
+    let rect = e.getBoundingClientRect();
+    let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+function handleScroll() {
+    for (let link of document.querySelectorAll(".nav-link")) {
+        link.classList.remove("blue-gradient");
     }
-    descText.style.animationName = "fade-out";
-    descText.style.animationDuration = "100ms";
-    descText.style.animationTimingFunction = "ease-in";
-    descText.style.animationPlayState = "running";
+    // Order matters
+    if (isVisible(about)) {
+        aboutLink.classList.add("blue-gradient");
+        return;
+    }
+    if (isVisible(exp)) {
+        expLink.classList.add("blue-gradient");
+        return;
+    }
+    if (isVisible(services)) {
+        servicesLink.classList.add("blue-gradient");
+        return;
+    }
+    if (isVisible(contact)) {
+        contactLink.classList.add("blue-gradient");
+    }
+}
+
+window.onscroll = handleScroll;
+
+
+handleScroll();
+
+// Typewriter
+
+const txt = [
+    "developer",
+    "teen",
+    "fun guy",
+    "energetic guy",
+    "person",
+    "millennial",
+    "team worker"
+];
+const typewriter = document.getElementById("typewriter");
+const cursor = document.getElementById("cursor");
+let i = 0;
+let j = 0;
+let cursorShown = true;
+
+function updateTypewriter(text) {
+    if (i < text.length) {
+        typewriter.innerText += text.charAt(i);
+        i++;
+        setTimeout(() => updateTypewriter(text), 150);
+    } else {
+        setTimeout(() => {
+            let interval = setInterval(() => {
+                if (i !== 0) {
+                    typewriter.innerText = typewriter.innerText.substr(0, i - 1);
+                    i--;
+                } else {
+                    clearInterval(interval);
+                    j++;
+                    updateTypewriter(txt[j % txt.length]);
+                }
+            }, 150);
+        }, 2000);
+    }
+}
+
+updateTypewriter(txt[j]);
+setInterval(() => {
+    if (cursorShown) {
+        cursor.style.borderRight = "none";
+    } else {
+        cursor.style.borderRight = "1px solid black";
+    }
+    cursorShown = !cursorShown;
+}, 1000);
+
+// Discord / Email
+const discord = document.getElementById("discord");
+const email = document.getElementById("email");
+const copyStatus = document.getElementById("copy-status");
+let copying = false;
+
+function updateCopyStatus() {
+    if (copying) {
+        return;
+    }
+    // I hope setTimeout can be a Promise
+    copying = true;
+    copyStatus.classList.add("text-green-500");
+    copyStatus.style.animationName = "fade-out";
+    copyStatus.style.animationDuration = "100ms";
+    copyStatus.style.animationPlayState = "running";
     setTimeout(() => {
-        descText.innerHTML = messages[current];
-        descText.style.animationName = "fade-in";
-        descText.style.animationDuration = "100ms";
-        descText.style.animationTimingFunction = "ease-out";
-        descText.style.animationPlayState = "running";
-        clicking = false;
+        copyStatus.innerText = "Copied!";
+        copyStatus.style.animationName = "fade-in";
+        copyStatus.style.animationDuration = "100ms";
+        copyStatus.style.animationPlayState = "running";
+        setTimeout(() => {
+            copyStatus.style.animationName = "fade-out";
+            copyStatus.style.animationDuration = "100ms";
+            copyStatus.style.animationPlayState = "running";
+            setTimeout(() => {
+                copyStatus.classList.remove("text-green-500");
+                copyStatus.innerText = "Ready to get in touch?";
+                copyStatus.style.animationName = "fade-in";
+                copyStatus.style.animationDuration = "100ms";
+                copyStatus.style.animationPlayState = "running";
+                setTimeout(() => {
+                    copying = false;
+                }, 100);
+            }, 100);
+        }, 1100);
     }, 100);
 }
 
-window.onkeyup = e => {
-    if (e.key === "Enter" || e.key === " ") {
-        handleClick();
-    }
+discord.onclick = () => {
+    navigator.clipboard.writeText("Dreta#6665");
+    updateCopyStatus();
 };
-
-playbackToggle.onclick = () => {
-    if (audio.paused) {
-        audio.play();
-        toggleOff.style.display = "none";
-        toggleOn.style.display = "block";
-    } else {
-        audio.pause();
-        toggleOn.style.display = "none";
-        toggleOff.style.display = "block";
-    }
+discord.onkeyup = () => {
+    navigator.clipboard.writeText("Dreta#6665");
+    updateCopyStatus();
 };
-
-initialize();
-
-const messages = [
-    "Stay-at-home Developer",
-    "Great at team-working and communicating",
-    "Offering:",
-    "Minecraft full server setup (not including hosting)",
-    "Customized Discord bot (not including hosting)",
-    "Discord server setup",
-    "Doing:",
-    "Working on <a href=\"https://github.com/Spock-App\" title=\"Spock\">Spock</a>",
-    "Preferred contact method is Discord."
-];
-
-let current = 0;
-let clicking = false;
-
-display2.onclick = handleClick;
-display2.ontouchend = handleClick;
+email.onclick = () => {
+    navigator.clipboard.writeText("yangmain3@gmail.com");
+    updateCopyStatus();
+};
+email.onkeyup = () => {
+    navigator.clipboard.writeText("yangmain3@gmail.com");
+    updateCopyStatus();
+};

@@ -20,64 +20,330 @@
     <meta content="@Dretacbe" property="twitter:site:id">
     <meta content="@Dretacbe" property="twitter:creator">
     <meta content="@Dretacbe" property="twitter:creator:id">
-    <link href="assets/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
-    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="assets/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<audio id="audio" loop src="assets/ambient.ogg"></audio>
+<div class="px-10 ml:px-20 sticky top-0"
+     style="backdrop-filter: blur(10px); z-index: 100; height: 6.5rem;
+      -webkit-backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8)">
+    <header class="flex flex-col sm:flex-row items-center justify-between py-6 relative">
+        <h3 class="text-2xl font-bold uppercase" style="color: #3846c8">DRETA</h3>
+        <nav class="hidden md:flex text-lg">
+            <a id="about-link" href="#"
+               class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6">About</a>
+            <a id="exp-link" href="#experiences"
+               class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6">Experiences</a>
+            <a id="services-link" href="#services"
+               class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6">Services</a>
+            <a id="contact-link" href="#contact"
+               class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6">Contact</a>
+        </nav>
+    </header>
+</div>
 
-<div class="vertical-center" id="display-2" style="display: none; flex-direction: column;">
-    <div class="font-header reveal-text" id="text">DRETA</div>
-    <div id="other-text" style="opacity: 0; font-size: 1rem; text-align: center; margin: 1rem;">
-        <div style="margin-bottom: 10rem">
-            <p id="description-text" style="font-size: 1.2rem; height: 4rem;">Stay-at-home Developer</p>
-            <p>
-                <a href="https://dreta.github.io"><img alt="Website"
-                                                       src="https://image.flaticon.com/icons/svg/3430/3430319.svg"
-                                                       style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="https://twitter.com/Dretacbe"><img alt="Twitter"
-                                                            src="https://image.flaticon.com/icons/svg/733/733579.svg"
-                                                            style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="https://reddit.com/u/Dretacbe"><img alt="Reddit"
-                                                             src="https://image.flaticon.com/icons/svg/2111/2111589.svg"
-                                                             style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="https://github.com/Dreta"><img alt="GitHub"
-                                                        src="https://image.flaticon.com/icons/svg/2111/2111425.svg"
-                                                        style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="email.html"><img alt="Email" src="https://image.flaticon.com/icons/svg/732/732200.svg"
-                                          style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="discord.html"><img alt="Discord" src="https://image.flaticon.com/icons/svg/2111/2111370.svg"
-                                            style="width: 1.5rem; margin-right: 0.8rem"></a>
-                <a href="https://patreon.com/Dreta"><img alt="Website"
-                                                         src="https://image.flaticon.com/icons/svg/2111/2111548.svg"
-                                                         style="width: 1.5rem; margin-right: 0.8rem"></a>
-            </p>
+<div class="bg-white flex flex-col" id="about">
+    <div class="px-5 md:px-10 lg:px-20">
+        <main class="flex flex-col-reverse sm:flex-row jusitfy-between items-center py-12">
+            <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <!--suppress CssInvalidPropertyValue -->
+                <h1 class="text-6xl lg:text-8xl text-transparent leading-none mb-2 font-bold font-header bg-clip-text"
+                    style="
+background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%, #468fea 74%);">Hi! I'm Dreta,</h1>
+                <h2 class="text-3xl lg:text-5xl text-orange-500 text-secondary mb-6 font-header">a
+                    <!--suppress CssInvalidPropertyValue -->
+                    <span class="text-transparent bg-clip-text orange-gradient">
+                        <span id="typewriter"></span></span><span id="cursor"
+                                                                  style="border-right: 1px solid black; height: 2.5rem; display: inline-block"></span>.
+                </h2>
+                <p class="text-gray-600 leading-relaxed mb-12">
+                    I am a developer having experience in Python (including Django),
+                    JavaScript (including web development / Electron) and Java. Over the
+                    past years I have worked with several clients and created
+                    applications that fit their needs. I am not currently accepting
+                    commissions.
+                </p>
+                <a href="#experiences"
+                   class="transition hover:button py-3 px-6 uppercase text-lg font-bold text-white rounded-full btn-color">
+                    LEARN MORE
+                </a>
+            </div>
+            <div class="mb-16 sm:mb-0 mt-8 sm:mt-0 sm:w-3/5 sm:pl-12">
+                <img src="assets/images/hero0.png"
+                     alt="Art of people coding in front of a screen with a window shown on it" style="width: 100rem;">
+            </div>
+        </main>
+    </div>
+</div>
+
+<div class="bg-white flex flex-col mt-3" id="experiences">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+              fill="#f6f6f6"></path>
+    </svg>
+
+    <div class="py-16 px-10 ml:px-20 w-full" style="background-color: #f6f6f6">
+        <h1 class="text-5xl lg:text-7xl leading-none mb-2 font-bold font-header text-center">
+            Experiences
+        </h1>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center mt-16">
+            <div class="mb-16 lg:mr-16">
+                <div class="my-5">
+                    <div class="my-5">
+                        <p>Computer Architecture</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 45%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <p>Algorithms / Artificial Intelligence</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 30%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <p>Bug fixing / making</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="mt-2 mb-5">
+                        <p>Python Web Development</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 65%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 mb-5">
+                        <p>Node.js Web Development (with React or vanilla DOM)</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 55%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <p>Minecraft Modded Server Plugin Development (Spigot)</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <p>Discord Bot Development</p>
+                        <div class="mt-2 bg-gray-600 rounded-full">
+                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:ml-16">
+                <figure class="bg-white rounded-xl p-8 shadow-xl" style="max-width: 24rem; max-height: 32rem">
+                    <img class="w-32 h-32 rounded-full mx-auto"
+                         src="assets/images/user.png" alt="Avatar of Abram O'Brien">
+                    <div class="py-6 text-center space-y-4">
+                        <blockquote>
+                            <p class="text-lg font-semibold">
+                                "I thoroughly enjoyed working with Dreta on our project,
+                                although he created thousands of bugs in the process. I am
+                                always impressed by how he is able to mess up something
+                                so simple."
+                            </p>
+                        </blockquote>
+                        <div class="font-medium">
+                            <div class="bg-clip-text text-transparent blue-gradient">
+                                Abram O'Brien
+                            </div>
+                            <div class="text-gray-500">
+                                Student, Developer
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </div>
         </div>
-        <p>Click or touch to see more</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"
+         style="transform: rotate(180deg)">
+        <path d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+              fill="#f6f6f6"></path>
+    </svg>
+</div>
+
+<div class="bg-white flex flex-col mt-3 pt-16" id="services">
+    <div class="py-16 px-10 ml:px-20">
+        <h1 class="text-5xl lg:text-7xl leading-none mb-2 font-bold font-header text-center">
+            Services
+        </h1>
+        <p class="text-center mt-3">Note: I am not accepting commission requests right now.</p>
+
+        <main class="flex flex-col-reverse sm:flex-row jusitfy-center items-center py-12">
+            <div class="mb-16 lg:mb-0 mt-8 sm:mt-0 lg:w-1/2 lg:pl-12">
+                <img src="assets/images/art0.png" alt="Art of people collaborating together on a project"
+                     style="width: 100rem;">
+            </div>
+            <div class="lg:w-1/2 flex flex-col items-center justify-center">
+                <div class="lg:hidden">
+                    <h1 class="text-3xl leading-none mb-2 font-bold font-header">Web Services</h1>
+                    <p class="mb-4">
+                        I can create customized web services (such as
+                        blogs, personal websites, portfolios) tailored
+                        to your own needs, just like this website!
+                    </p>
+
+                    <h1 class="text-3xl leading-none mb-2 font-bold font-header">Minecraft Server Plugins</h1>
+                    <p class="mb-4">
+                        Creating a server is hard, and plugins can make it
+                        easier. I offer custom Minecraft plugins or full
+                        Minecraft server setups at a low price.
+                    </p>
+
+                    <h1 class="text-3xl leading-none mb-2 font-bold font-header">Discord Bots</h1>
+                    <p class="mb-4">
+                        A Discord Bot adds a nice extra experience for
+                        your Discord community. I offer Discord Bots for
+                        role management, moderation and more.
+                    </p>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="flex">
+                        <div class="cr-card shadow-xl h-52 w-40 xl:h-64 xl:w-56 overflow-y-auto">
+                            <h1 class="text-2xl font-header">Web Services</h1>
+                            <p>
+                                I can create customized web services (such as
+                                blogs, personal websites, portfolios) tailored
+                                to your own needs, just like this website!
+                            </p>
+                        </div>
+                        <div class="cr-card shadow-xl h-52 w-40 xl:h-64 xl:w-56 overflow-y-auto">
+                            <h1 class="text-2xl font-header">Minecraft Server Plugins</h1>
+                            <p>
+                                Creating a server is hard, and plugins can make it
+                                easier. I offer custom Minecraft plugins or full
+                                Minecraft server setups at a low price.
+                            </p>
+                        </div>
+                        <div class="cr-card shadow-xl h-52 w-40 xl:h-64 xl:w-56 overflow-y-auto">
+                            <h1 class="text-2xl font-header">Discord Bots</h1>
+                            <p>
+                                A Discord Bot adds a nice extra experience for
+                                your Discord community. I offer Discord Bots for
+                                role management, moderation and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 </div>
 
-<div style="position: absolute; bottom: 3rem; left: 3rem; cursor: pointer;" id="playback-toggle">
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-             style="width: 1.5rem; height: 1.5rem; display: block;" id="toggle-off">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                  clip-rule="evenodd" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-        </svg>
-    </div>
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-             style="width: 1.5rem; height: 1.5rem; display: none;" id="toggle-on">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-        </svg>
+<div class="bg-white flex flex-col mt-3" id="contact">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+              fill="#f6f6f6"></path>
+    </svg>
+
+    <div class="py-32 px-10 ml:px-20" style="background-color: #f6f6f6">
+        <h1 class="text-3xl lg:text-5xl leading-none mb-2 font-bold font-header text-center" id="copy-status">
+            Ready to get in touch?
+        </h1>
+
+        <div class="flex items-center justify-center mt-16">
+            <a href="https://twitter.com/Dretacbe" title="Dreta | Twitter" class="mr-5">
+                <img alt="Dreta | Twitter" class="w-16 h-16" src="https://image.flaticon.com/icons/svg/733/733579.svg">
+            </a>
+            <a href="https://reddit.com/u/Dretacbe" title="Dreta | Reddit" class="mr-5">
+                <img alt="Dreta | Reddit" class="w-16 h-16" src="https://image.flaticon.com/icons/svg/2111/2111589.svg">
+            </a>
+            <a href="https://github.com/Dreta" title="Dreta | GitHub" class="mr-5">
+                <img alt="Dreta | GitHub" class="w-16 h-16" src="https://image.flaticon.com/icons/svg/2111/2111425.svg">
+            </a>
+            <a id="email" title="Dreta | Email" class="mr-5">
+                <img alt="Dreta | Email" class="w-16 h-16 cursor-pointer"
+                     src="https://image.flaticon.com/icons/svg/732/732200.svg">
+            </a>
+            <a id="discord" title="Dreta | Discord" class="mr-5">
+                <img alt="Dreta | Discord" class="w-16 h-16 cursor-pointer"
+                     src="https://image.flaticon.com/icons/svg/2111/2111370.svg">
+            </a>
+            <a href="https://patreon.com/Dreta" title="Dreta | Patreon">
+                <img alt="Dreta | Patreon" class="w-16 h-16"
+                     src="https://image.flaticon.com/icons/svg/2111/2111548.svg">
+            </a>
+        </div>
     </div>
 </div>
+
+<section class="py-8 w-full bg-gray-200">
+    <div class="container mx-auto px-8">
+        <div class="table w-full">
+            <div class="block sm:table-cell mb-4">
+                <h1 class="text-2xl font-header font-bold">Dreta</h1>
+                <h2 class="text-lg">That energetic millennial developer</h2>
+                <p>Crafted with <span class="color-red-500">♥️</span> by Dreta, all rights reserved.</p>
+            </div>
+            <div class="block sm:table-cell">
+                <p class="uppercase text-gray text-sm font-header sm:mb-6">Social</p>
+                <ul class="list-reset text-md mb-6">
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://twitter.com/Dretacbe"
+                           class="text-gray hover:text-gray-800 transition">Twitter</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://reddit.com/u/Dretacbe"
+                           class="text-gray hover:text-gray-800 transition">Reddit</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://github.com/Dreta" class="text-gray hover:text-gray-800 transition">GitHub</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://patreon.com/Dreta" class="text-gray hover:text-gray-800 transition">Patreon</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block sm:table-cell">
+                <p class="uppercase text-gray text-sm font-header sm:mb-6">Cool Stuff</p>
+                <ul class="list-reset text-md mb-6">
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://namelessmc.com" class="text-gray hover:text-gray-800 transition">NamelessMC</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://tadhgboyle.dev" class="text-gray hover:text-gray-800 transition">Aberdeener</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="https://github.com/2xjtn" class="text-gray hover:text-gray-800 transition">2xjtn</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block sm:table-cell">
+                <p class="uppercase text-gray text-sm font-header sm:mb-6">Me</p>
+                <ul class="list-reset text-md mb-6">
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="#" class="text-gray hover:text-gray-800 transition">About</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="#experiences" class="text-gray hover:text-gray-800 transition">Experiences</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="#services" class="text-gray hover:text-gray-800 transition">Services</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                        <a href="#contact" class="text-gray hover:text-gray-800 transition">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 <script src="assets/script.js"></script>
 </body>
