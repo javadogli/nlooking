@@ -145,10 +145,10 @@ discord.onkeyup = () => {
     updateCopyStatus();
 };
 email.onclick = () => {
-    navigator.clipboard.writeText("yangmain3@gmail.com");
+    navigator.clipboard.writeText("hello@dreta.dev");
     updateCopyStatus();
 };
 email.onkeyup = () => {
-    navigator.clipboard.writeText("yangmain3@gmail.com");
+    navigator.clipboard.writeText("hello@dreta.dev");
     updateCopyStatus();
 };
