@@ -76,11 +76,13 @@ html {
 }
 
 .cr-card:not(:last-child):hover,
+.cr-card:not(:last-child):focus,
 .cr-card:not(:last-child):focus-within {
     transform: translateY(-1rem);
 }
 
 .cr-card:not(:last-child):hover ~ .cr-card,
+.cr-card:not(:last-child):focus ~ .cr-card,
 .cr-card:not(:last-child):focus-within ~ .cr-card {
     transform: translateX(2rem);
 }
