@@ -95,3 +95,12 @@ html {
 .red-dot::before {
     content: "•";
 }
+
+.green-dot {
+    color: lawngreen;
+    font-weight: 700;
+}
+
+.green-dot::before {
+    content: "•";
+}
