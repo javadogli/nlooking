@@ -86,3 +86,12 @@ html {
 .cr-card:not(:last-child):focus-within ~ .cr-card {
     transform: translateX(2rem);
 }
+
+.red-dot {
+    color: red;
+    font-weight: 700;
+}
+
+.red-dot::before {
+    content: "•";
+}
