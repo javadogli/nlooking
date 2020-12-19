@@ -99,7 +99,6 @@ setInterval(() => {
 
 // Discord / Email
 const discord = document.getElementById("discord");
-const email = document.getElementById("email");
 const copyStatus = document.getElementById("copy-status");
 let copying = false;
 
@@ -142,13 +141,5 @@ discord.onclick = () => {
 };
 discord.onkeyup = () => {
     navigator.clipboard.writeText("Dreta#6665");
-    updateCopyStatus();
-};
-email.onclick = () => {
-    navigator.clipboard.writeText("hello@dreta.dev");
-    updateCopyStatus();
-};
-email.onkeyup = () => {
-    navigator.clipboard.writeText("hello@dreta.dev");
     updateCopyStatus();
 };
