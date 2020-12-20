@@ -52,13 +52,13 @@ handleScroll();
 // Typewriter
 
 const txt = [
-    "developer",
-    "teen",
-    "fun guy",
-    "energetic guy",
-    "person",
+    "passionate",
+    "energetic",
+    "experienced",
+    "team-working",
     "millennial",
-    "team worker"
+    "efficient",
+    "reasonable"
 ];
 const typewriter = document.getElementById("typewriter");
 const cursor = document.getElementById("cursor");
@@ -90,7 +90,7 @@ function updateTypewriter(text) {
 updateTypewriter(txt[j]);
 setInterval(() => {
     if (cursorShown) {
-        cursor.style.borderRight = "none";
+        cursor.style.borderRight = "1px solid transparent";
     } else {
         cursor.style.borderRight = "1px solid black";
     }
