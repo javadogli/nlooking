@@ -8,6 +8,7 @@ const aboutLink = document.getElementById("about-link");
 const expLink = document.getElementById("exp-link");
 const servicesLink = document.getElementById("services-link");
 const contactLink = document.getElementById("contact-link");
+const a = document.getElementById("a");
 
 // Scrollspy
 
@@ -67,6 +68,11 @@ let j = 0;
 let cursorShown = true;
 
 function updateTypewriter(text) {
+    if (text.startsWith("a") || text.startsWith("e") || text.startsWith("i") || text.startsWith("o") || text.startsWith("u")) {
+        a.innerText = "an";
+    } else {
+        a.innerText = "a";
+    }
     if (i < text.length) {
         typewriter.innerText += text.charAt(i);
         i++;
@@ -143,3 +149,7 @@ discord.onkeyup = () => {
     navigator.clipboard.writeText("Dreta#6665");
     updateCopyStatus();
 };
+discord.ontouchend = () => {
+    navigator.clipboard.writeText("Dreta#6665");
+    updateCopyStatus();
+}
