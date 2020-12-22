@@ -29,7 +29,7 @@
     <link href="assets/styles.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="px-10 ml:px-20 sticky top-0"
+<div class="px-10 ml:px-20 sticky top-0 w-screen"
      style="backdrop-filter: blur(10px); z-index: 100; height: 6.5rem;
       -webkit-backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8)">
     <header class="flex flex-col sm:flex-row items-center justify-between py-6 relative">
@@ -40,9 +40,11 @@
             <a class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6"
                href="#experiences-scrollto"
                id="exp-link">Experiences</a>
-            <a class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6" href="#services"
+            <a class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6"
+               href="#services"
                id="services-link">Services</a>
-            <a class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6" href="#contact-scrollto"
+            <a class="nav-link text-transparent bg-black hover:blue-gradient bg-clip-text transition py-3 px-6"
+               href="#contact-scrollto"
                id="contact-link">Contact</a>
         </nav>
     </header>
@@ -50,16 +52,16 @@
 
 <div class="bg-white flex flex-col" id="about">
     <div class="px-5 md:px-10 lg:px-20">
-        <main class="flex flex-col-reverse sm:flex-row jusitfy-between items-center py-12">
+        <main class="flex flex-col-reverse sm:flex-row justify-between items-center py-12">
             <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center sm:text-left">
                 <h1 class="text-6xl lg:text-8xl text-transparent leading-none mb-2 font-header-style bg-clip-text"
                     style="
 background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%, #468fea 74%);">Hi! I'm Dreta,</h1>
-                <h2 class="text-3xl lg:text-5xl text-orange-500 text-secondary mb-6 font-header">
+                <h2 class="text-3xl lg:text-5xl sm:h-auto h-16 text-orange-500 text-secondary mb-6 font-header">
                     <span id="a" class="font-style">a</span>
                     <span class="text-transparent bg-clip-text orange-gradient">
                         <span id="typewriter" class="font-style"></span></span><span id="cursor"
-                                                                  style="border-right: 1px solid black; height: 2.5rem; display: inline-block"></span>
+                                                                                     style="border-right: 1px solid black; height: 2.5rem; display: inline-block"></span>
                     <span class="font-style">dev.</span>
                 </h2>
                 <p class="text-gray-600 leading-relaxed mb-12">
@@ -89,89 +91,92 @@ background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%,
         <path d="M0,224L1440,32L1440,320L0,320Z" fill="#f6f6f6"></path>
     </svg>
 
-    <div class="py-5 px-10 ml:px-20 w-full" style="background-color: #f6f6f6">
-        <h2 class="text-5xl lg:text-7xl leading-none mb-2 font-style text-center" id="experiences-scrollto">
+    <div style="background-color: #f6f6f6" class="py-10">
+        <h2 class="py-0 lg:px-10 text-4xl md:text-5xl lg:text-7xl leading-none mb-2 font-style text-center"
+            id="experiences-scrollto">
             Experiences
         </h2>
 
-        <div class="flex flex-col lg:flex-row items-center justify-center mt-16">
-            <div class="mb-16 lg:mr-16">
-                <div class="my-5">
+        <div class="px-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center justify-center">
+                <div class="mb-16 lg:mr-16">
                     <div class="my-5">
-                        <p>Computer Architecture</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 45%;"></div>
+                        <div class="my-5">
+                            <p>Computer Architecture</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 45%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="my-5">
-                        <p>Algorithms / Artificial Intelligence</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 30%;"></div>
+                        <div class="my-5">
+                            <p>Algorithms / Artificial Intelligence</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 30%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="my-5">
-                        <p>Bug fixing / making</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 85%;"></div>
+                        <div class="my-5">
+                            <p>Bug fixing / making</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 85%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <hr />
+                        <hr />
 
-                    <div class="mt-2 mb-5">
-                        <p>Python Web Development</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 65%;"></div>
+                        <div class="mt-2 mb-5">
+                            <p>Python Web Development</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 65%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mt-2 mb-5">
-                        <p>Node.js Web Development (with React or vanilla DOM)</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 55%;"></div>
+                        <div class="mt-2 mb-5">
+                            <p>Node.js Web Development (with React or vanilla DOM)</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 55%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="my-5">
-                        <p>Minecraft Modded Server Plugin Development (Bukkit/Spigot/Paper)</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 80%;"></div>
+                        <div class="my-5">
+                            <p>Minecraft Modded Server Plugin Development (Bukkit/Spigot/Paper)</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 80%;"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="my-5">
-                        <p>Discord Bot Development</p>
-                        <div class="mt-2 bg-gray-600 rounded-full">
-                            <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 90%;"></div>
+                        <div class="my-5">
+                            <p>Discord Bot Development</p>
+                            <div class="mt-2 bg-gray-600 rounded-full">
+                                <div class="mt-2 py-1 rounded-full orange-gradient" style="width: 90%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="lg:ml-16">
-                <figure class="bg-white rounded-xl p-8 shadow-xl" style="max-width: 24rem; max-height: 50rem">
-                    <img alt="Avatar of Abram O'Brien"
-                         class="w-32 h-32 rounded-full mx-auto" src="assets/images/user.webp">
-                    <div class="py-6 text-center space-y-4">
-                        <blockquote>
-                            <p class="text-lg font-semibold">
-                                "I thoroughly enjoyed working with Dreta on our project,
-                                although he created thousands of bugs in the process. I am
-                                always impressed by how he is able to mess up something
-                                so simple."
-                            </p>
-                        </blockquote>
-                        <div class="font-medium">
-                            <div class="bg-clip-text text-transparent blue-gradient">
-                                Abram O'Brien
-                            </div>
-                            <div class="text-gray-500">
-                                Student, Developer
+                <div class="lg:ml-16">
+                    <figure class="bg-white rounded-xl p-8 shadow-xl" style="max-width: 24rem; max-height: 50rem">
+                        <img alt="Avatar of Abram O'Brien"
+                             class="w-32 h-32 rounded-full mx-auto" src="assets/images/user.webp">
+                        <div class="py-6 text-center space-y-4">
+                            <blockquote>
+                                <p class="text-lg font-semibold">
+                                    "I thoroughly enjoyed working with Dreta on our project,
+                                    although he created thousands of bugs in the process. I am
+                                    always impressed by how he is able to mess up something
+                                    so simple."
+                                </p>
+                            </blockquote>
+                            <div class="font-medium">
+                                <div class="bg-clip-text text-transparent blue-gradient">
+                                    Abram O'Brien
+                                </div>
+                                <div class="text-gray-500">
+                                    Student, Developer
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </figure>
+                    </figure>
+                </div>
             </div>
         </div>
     </div>
@@ -182,11 +187,12 @@ background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%,
 </div>
 
 <div class="bg-white flex flex-col mt-3 pt-16" id="services">
-    <div class="py-8 px-10 ml:px-20">
-        <h2 class="text-5xl lg:text-7xl leading-none mb-2 font-style text-center">
-            Services
-        </h2>
-        <p class="text-center mt-3"><span class="font-bold">Status: <span class="red-dot"></span></span> Busy. Not
+    <h2 class="py-0 lg:px-10 text-4xl md:text-5xl lg:text-7xl leading-none mb-2 font-style text-center">
+        Services
+    </h2>
+
+    <div class="px-10 ml:px-20">
+        <p class="text-center"><span class="font-bold">Status: <span class="red-dot"></span></span> Busy. Not
             accepting commissions.</p>
 
         <main class="flex flex-col lg:flex-row justify-center items-center py-12">
@@ -261,10 +267,10 @@ background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%,
         <path d="M0,224L1440,32L1440,320L0,320Z" fill="#f6f6f6"></path>
     </svg>
 
-    <div class="py-0 px-10 ml:px-20 w-full" id="contact-scrollto" style="background-color: #f6f6f6">
+    <div class="py-10 px-10 ml:px-20 w-full" id="contact-scrollto" style="background-color: #f6f6f6">
         <div class="flex flex-col lg:flex-row items-center justify-center mb-8">
             <div class="mb-16 lg:mr-16 lg:w-1/2 flex-col">
-                <h2 class="text-5xl lg:text-7xl leading-none mb-2 font-style text-center" id="copy-status">
+                <h2 class="text-4xl md:text-5xl lg:text-7xl leading-none mb-2 font-style text-center" id="copy-status">
                     Ready to get in touch?
                 </h2>
                 <div class="flex items-center justify-center mt-8">
@@ -305,7 +311,7 @@ background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%,
 <footer class="py-8 w-full bg-gray-200" id="footer">
     <div class="container mx-auto px-8">
         <div class="table w-full">
-            <div class="block sm:table-cell mb-4" style="width: 50rem !important">
+            <div class="block sm:table-cell mb-4 sm:pr-10" style="max-width: 20rem !important;">
                 <h3 class="text-2xl font-style font-bold">Dreta</h3>
                 <p>Crafted with <span class="color-red-500">♥️</span> by Dreta, all rights reserved.</p>
                 <p>Some artworks used in this site are created by <a class="hover:text-gray-800 transition underline"
@@ -316,7 +322,8 @@ background-color: #468fea; background-image: linear-gradient(315deg, #3846c8 0%,
                     Studios
                     are provided, Dreta is in no way affiliated with Mojang Studios, and nor should it be considered an
                     individual endorsed by Mojang Studios.</p>
-                <p>The <a href="http://iconian.com/e.html" class="hover:text-gray-800 transition underline">Earth Orbiter</a> font is used in this site.</p>
+                <p>The <a class="hover:text-gray-800 transition underline" href="http://iconian.com/e.html">Earth
+                    Orbiter</a> font is used in this site.</p>
             </div>
             <div class="block sm:table-cell">
                 <p class="uppercase text-gray text-sm font-header sm:mb-6">Social</p>
