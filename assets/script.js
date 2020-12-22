@@ -152,4 +152,4 @@ discord.onkeyup = () => {
 discord.ontouchend = () => {
     navigator.clipboard.writeText("Dreta#6665");
     updateCopyStatus();
-}
+};
