@@ -53,13 +53,12 @@ handleScroll();
 // Typewriter
 
 const txt = [
-    "passionate",
-    "energetic",
-    "experienced",
-    "team-working",
-    "millennial",
-    "efficient",
-    "reasonable"
+    "fun",
+    "fast",
+    "ardent",
+    "skillful",
+    "young",
+    "fair"
 ];
 const typewriter = document.getElementById("typewriter");
 const cursor = document.getElementById("cursor");
