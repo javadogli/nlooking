@@ -79,6 +79,9 @@ function updateTypewriter(text) {
     } else {
         setTimeout(() => {
             let interval = setInterval(() => {
+                if (!isVisible(typewriter)) {
+                    return;
+                }
                 if (i !== 0) {
                     typewriter.innerText = typewriter.innerText.substr(0, i - 1);
                     i--;
