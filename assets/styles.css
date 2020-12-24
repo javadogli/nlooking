@@ -46,7 +46,11 @@ html {
 }
 
 .btn-color {
-    background-color: #468fea;
+    background-color: #468fea55;
+}
+
+.clip-style {
+    clip-path: url(#clip-path);
 }
 
 body::-webkit-scrollbar {
@@ -79,7 +83,7 @@ body {
 }
 
 .hover\:button:hover {
-    background-color: #3846c8;
+    background-color: #3846c855;
 }
 
 .cr-card {
