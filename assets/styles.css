@@ -53,6 +53,10 @@ html {
     clip-path: url(#clip-path);
 }
 
+.clip-style-services {
+    clip-path: url(#clip-path-services);
+}
+
 body::-webkit-scrollbar {
     display: none !important;
 }
